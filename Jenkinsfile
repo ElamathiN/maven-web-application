@@ -11,7 +11,7 @@ sh "${mavenHome}/bin/mvn clean package"
 }
 stage('GenerateSonarReport')
 {
-sh "{mavenHome}/bin/mvn sonar:sonar"
+sh "${mavenHome}/bin/mvn sonar:sonar"
 }
 stage('UploadArtifactintoNexus')
 {
