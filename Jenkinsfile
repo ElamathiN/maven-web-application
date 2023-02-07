@@ -17,4 +17,10 @@ stage('UploadArtifactintoNexus')
 {
 sh "${mavenHome}/bin/mvn deploy"
 }
+stage('SendEmailNotifications')
+{
+emailext body: '''Build Completed - Pipeline script
+
+Thanks,
+Elamathi''', subject: 'Build Completed - Pipeline script', to: 'elamathinachimuthu@gmail.com'  
 }
